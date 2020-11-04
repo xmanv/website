@@ -10,19 +10,19 @@ npm run docs:build
 cd docs/.vuepress/dist
 
 # 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
+echo 'docs.xmanv.com' > CNAME
 
 git init
 git add -A
 git commit -m 'depoly脚本更新'
 
-git config user.name wangtunan
-git config user.email why583440138@gmail.com
+# git config user.name xmanv
+# git config user.email xmanvcom@gmail.com
 
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:wangtunan/blog.git master:gh-pages
-git push -f https://github.com/wangtunan/blog.git master:gh-pages
+# git push -f git@github.com:xmanv/blog.git master:gh-pages
+git push -f https://github.com/xmanv/website.git master:gh-pages
 cd -

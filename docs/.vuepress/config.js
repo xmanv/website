@@ -1,9 +1,10 @@
 const nav = require('./utils/nav.js')
 const { webpackSidebar, vueAnalysisSidebar } = nav
 module.exports = {
-  title: '汪图南',
-  description: '汪图南的个人博客',
-  base: '/blog/',
+  title: '厄索斯',
+  description: '厄索斯的个人博客',
+  base: '', //自定义域名要空
+  // base: '/website/',  //如果使用github.io 域名直接用
   head: [
     ['link', { rel: 'icon', href: '/icon.png' }]
   ],
@@ -14,7 +15,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: '最后更新时间',
     sidebar: 'auto',
-    repo: 'https://github.com/wangtunan/blog',
+    repo: 'https://github.com/GitHub644',
     repoLabel: 'Github',
     nav: [
       {

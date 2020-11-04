@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 # VuePress <Badge text="0.x"/>
-本`blog`配套了一个基于 VuePress 的一个简单的配置案例，此配置案例包含了本`blog`绝大部分配置案例，更多详情请移步这里[VuePress配置案例](https://github.com/wangtunan/vuepress-blog-demo)
+本`blog`配套了一个基于 VuePress 的一个简单的配置案例，此配置案例包含了本`blog`绝大部分配置案例，更多详情请移步这里[VuePress配置案例](https://github.com/xmanv/vuepress-blog-demo)
 ## 介绍
 
 ### 如何而来
@@ -82,7 +82,7 @@ features:
   details: 故九万里，则风斯在下矣，而后乃今培风；背负青天，而莫之夭阏者，而后乃今将图南。
 - title: For Interview
   details: 广州，已入坑ღ( ´･ᴗ･` )比心
-footer: Copyright © 2019-present Wangtunan
+footer: Copyright © 2019-present xmanv
 ---
 ```
 以上配置即为本博客的首页效果
@@ -371,7 +371,7 @@ next: /JavaScript/
 module.exports = {
   themeConfig: {
     // 其它配置
-    repo: 'https://github.com/wangtunan/blog',
+    repo: 'https://github.com/GitHub644',
     repoLabel: 'Github',
     nav: [
       { text: '首页', link: '/' },
@@ -393,7 +393,7 @@ module.exports = {
 module.exports = {
   themeConfig: {
     // 其它配置
-    repo: 'https://github.com/wangtunan/blog',
+    repo: 'https://github.com/GitHub644',
     repoLabel: 'Github',
     editLinks: true,
     editLinkText: '编辑此页',

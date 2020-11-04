@@ -191,7 +191,7 @@ module.exports = {
   },
   output: {
     // 假设一个CDN地址
-    publicPath: 'www.cdn.com/wangtunan',
+    publicPath: 'www.cdn.com/xmanv',
     // 使用[name]占位符，打包结果为main.js，sub.js
     filename: '[name].js',
     path: path.resolve(__dirname,'dist')
@@ -201,8 +201,8 @@ module.exports = {
 
 在上面的配置完毕，我们打包后`dist/index.html`的`js`引用效果如下：
 ```html
-<script type="text/javascript" src="www.cdn.com/wangtunan/main.js"></script>
-<script type="text/javascript" src="www.cdn.com/wangtunan/sub.js"></script>
+<script type="text/javascript" src="www.cdn.com/xmanv/main.js"></script>
+<script type="text/javascript" src="www.cdn.com/xmanv/sub.js"></script>
 ```
 
 ## 配置SourceMap

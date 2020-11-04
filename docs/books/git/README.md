@@ -113,14 +113,14 @@ $ git init
 克隆仓库需要使用`git clone [url]`命令：
 ```sh
 # 克隆现有仓库
-$ git clone https://github.com/wangtunan/blog
+$ git clone https://github.com/GitHub644
 ```
 执行这段命令后，会创建一个叫做`blog`的目录，并在其中初始化`.git`目录，然后将远程仓库中所有的数据拉取到本地并检出最新版本的可用副本。
 
 如果我们在克隆的时候，需要更改创建目录的名字，可以如下方式：
 ```sh
 # 克隆现有仓库，新创建的目录名字叫做newblog
-$ git clone https://github.com/wangtunan/blog newblog
+$ git clone https://github.com/GitHub644 newblog
 ```
 ### 记录更改到仓库
 在`Git`工作目录中，每一个文件都处于两种状态之一：
@@ -360,7 +360,7 @@ $ git log --graph
 # 只显示最近一次的提交
 $ git log -1
 # 只显示作者为xxx的提交
-$ git log --author=wangtunan
+$ git log --author=xmanv
 # 只显示2020年3月31日之前的提交
 $ git log --before='2020-03-31'
 ```
@@ -429,15 +429,15 @@ origin
 ```sh
 # 显示远程仓库信息
 $ git remote -v
-origin  https://github.com/wangtunan/blog.git (fetch)
-origin  https://github.com/wangtunan/blog.git (push)
+origin  https://github.com/GitHub644.git (fetch)
+origin  https://github.com/GitHub644.git (push)
 ```
 
 #### 添加远程仓库
 要添加远程仓库，并给其取一个名字，可以使用`git remote add [shortname] [url]`命令：
 ```sh
 # 添加远程仓库
-$ git remote add origin https://github.com/wangtunan/blog.git
+$ git remote add origin https://github.com/GitHub644.git
 ```
 
 #### 从远程仓库拉取数据
@@ -464,8 +464,8 @@ $ git push origin master
 ```sh
 # 查看远程仓库的更多信息
 $ git remote show origin
-  Fetch URL: https://github.com/wangtunan/blog.git
-  Push  URL: https://github.com/wangtunan/blog.git
+  Fetch URL: https://github.com/GitHub644.git
+  Push  URL: https://github.com/GitHub644.git
   HEAD branch: master
   Remote branches:
     gh-pages tracked
