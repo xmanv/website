@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "depoly": "depoly.sh"
+  },
+  "keywords": [
+    "vue",
+    "vue源码分析",
+    "wangtunan"
+  ],
+  "dependencies": {
+    "element-ui": "^2.10.0"
+  }
+}
