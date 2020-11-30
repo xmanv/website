@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>阿里云Centos7 Docker的一些玩法 | 厄索斯</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/icon.png">
+    <meta name="description" content="厄索斯">
+    
+    <link rel="preload" href="/assets/css/0.styles.c7cd9109.css" as="style"><link rel="preload" href="/assets/js/app.d98f75d3.js" as="script"><link rel="preload" href="/assets/js/7.9b6d0533.js" as="script"><link rel="preload" href="/assets/js/14.3fc06e57.js" as="script"><link rel="prefetch" href="/assets/js/1.2c63f614.js"><link rel="prefetch" href="/assets/js/10.cc5d14b9.js"><link rel="prefetch" href="/assets/js/100.c8f44be0.js"><link rel="prefetch" href="/assets/js/101.795b3d75.js"><link rel="prefetch" href="/assets/js/102.aaec7d00.js"><link rel="prefetch" href="/assets/js/103.2d2b0842.js"><link rel="prefetch" href="/assets/js/104.eb790654.js"><link rel="prefetch" href="/assets/js/105.a7704875.js"><link rel="prefetch" href="/assets/js/106.8ab9cd83.js"><link rel="prefetch" href="/assets/js/107.ee3ce424.js"><link rel="prefetch" href="/assets/js/108.08e2cedb.js"><link rel="prefetch" href="/assets/js/109.877c3f78.js"><link rel="prefetch" href="/assets/js/11.c24817ef.js"><link rel="prefetch" href="/assets/js/110.f5da30a6.js"><link rel="prefetch" href="/assets/js/111.f2577856.js"><link rel="prefetch" href="/assets/js/112.b680de7f.js"><link rel="prefetch" href="/assets/js/113.4d4df4c4.js"><link rel="prefetch" href="/assets/js/114.30de0066.js"><link rel="prefetch" href="/assets/js/115.d5ecc68f.js"><link rel="prefetch" href="/assets/js/116.6147f600.js"><link rel="prefetch" href="/assets/js/117.3c3956df.js"><link rel="prefetch" href="/assets/js/118.daae1fb1.js"><link rel="prefetch" href="/assets/js/119.436d3d29.js"><link rel="prefetch" href="/assets/js/12.ab5f7c80.js"><link rel="prefetch" href="/assets/js/120.1095d1d6.js"><link rel="prefetch" href="/assets/js/121.9f460f74.js"><link rel="prefetch" href="/assets/js/122.6fa65276.js"><link rel="prefetch" href="/assets/js/123.21855554.js"><link rel="prefetch" href="/assets/js/124.94f826a4.js"><link rel="prefetch" href="/assets/js/125.09bdd832.js"><link rel="prefetch" href="/assets/js/126.8d53ae81.js"><link rel="prefetch" href="/assets/js/127.4cb9031f.js"><link rel="prefetch" href="/assets/js/128.2f929363.js"><link rel="prefetch" href="/assets/js/129.0164eea0.js"><link rel="prefetch" href="/assets/js/13.89dc7a50.js"><link rel="prefetch" href="/assets/js/130.f39a3d30.js"><link rel="prefetch" href="/assets/js/131.084ce4d5.js"><link rel="prefetch" href="/assets/js/132.ee4812c0.js"><link rel="prefetch" href="/assets/js/133.f1302ee1.js"><link rel="prefetch" href="/assets/js/134.11df087f.js"><link rel="prefetch" href="/assets/js/135.1a2c8799.js"><link rel="prefetch" href="/assets/js/136.ca35b1d9.js"><link rel="prefetch" href="/assets/js/137.c1c23e5a.js"><link rel="prefetch" href="/assets/js/138.df2c8355.js"><link rel="prefetch" href="/assets/js/139.6157decf.js"><link rel="prefetch" href="/assets/js/140.4c38a48a.js"><link rel="prefetch" href="/assets/js/141.55c239b4.js"><link rel="prefetch" href="/assets/js/142.367377a7.js"><link rel="prefetch" href="/assets/js/143.8a9e6059.js"><link rel="prefetch" href="/assets/js/144.00e6656d.js"><link rel="prefetch" href="/assets/js/145.84cfacef.js"><link rel="prefetch" href="/assets/js/146.d978c83e.js"><link rel="prefetch" href="/assets/js/147.a686cf28.js"><link rel="prefetch" href="/assets/js/148.e49d61a9.js"><link rel="prefetch" href="/assets/js/149.3910416e.js"><link rel="prefetch" href="/assets/js/15.18eacd20.js"><link rel="prefetch" href="/assets/js/150.3d9b5905.js"><link rel="prefetch" href="/assets/js/151.d990fa49.js"><link rel="prefetch" href="/assets/js/152.8d8a08ae.js"><link rel="prefetch" href="/assets/js/153.d51531ce.js"><link rel="prefetch" href="/assets/js/154.d374b646.js"><link rel="prefetch" href="/assets/js/155.e9153498.js"><link rel="prefetch" href="/assets/js/156.2295824e.js"><link rel="prefetch" href="/assets/js/157.221f67d7.js"><link rel="prefetch" href="/assets/js/158.8d252154.js"><link rel="prefetch" href="/assets/js/159.bb952efd.js"><link rel="prefetch" href="/assets/js/16.003392c7.js"><link rel="prefetch" href="/assets/js/160.69b9d123.js"><link rel="prefetch" href="/assets/js/161.00964eb4.js"><link rel="prefetch" href="/assets/js/162.197ee17a.js"><link rel="prefetch" href="/assets/js/163.caf0dd1b.js"><link rel="prefetch" href="/assets/js/164.27d90c5e.js"><link rel="prefetch" href="/assets/js/165.40e17a44.js"><link rel="prefetch" href="/assets/js/166.9abc86d0.js"><link rel="prefetch" href="/assets/js/167.2de82e8a.js"><link rel="prefetch" href="/assets/js/168.ba4950d5.js"><link rel="prefetch" href="/assets/js/169.f0c8adfc.js"><link rel="prefetch" href="/assets/js/17.2edc3b56.js"><link rel="prefetch" href="/assets/js/170.a6e3bb7d.js"><link rel="prefetch" href="/assets/js/171.593e2067.js"><link rel="prefetch" href="/assets/js/172.36cd1436.js"><link rel="prefetch" href="/assets/js/173.6b57ad74.js"><link rel="prefetch" href="/assets/js/174.03337b28.js"><link rel="prefetch" href="/assets/js/175.4f6a4c1f.js"><link rel="prefetch" href="/assets/js/176.09f161df.js"><link rel="prefetch" href="/assets/js/177.2213b875.js"><link rel="prefetch" href="/assets/js/178.cafdf490.js"><link rel="prefetch" href="/assets/js/179.feacf7af.js"><link rel="prefetch" href="/assets/js/18.f505ab09.js"><link rel="prefetch" href="/assets/js/180.bf1dbeef.js"><link rel="prefetch" href="/assets/js/181.d276a202.js"><link rel="prefetch" href="/assets/js/182.03ac25a5.js"><link rel="prefetch" href="/assets/js/183.b47e8331.js"><link rel="prefetch" href="/assets/js/184.25ea842d.js"><link rel="prefetch" href="/assets/js/185.2248daa0.js"><link rel="prefetch" href="/assets/js/186.a741edc6.js"><link rel="prefetch" href="/assets/js/187.c49038cb.js"><link rel="prefetch" href="/assets/js/188.5a0b84b4.js"><link rel="prefetch" href="/assets/js/189.e57ab776.js"><link rel="prefetch" href="/assets/js/19.2c169746.js"><link rel="prefetch" href="/assets/js/190.a9a5cc1c.js"><link rel="prefetch" href="/assets/js/191.b2afd445.js"><link rel="prefetch" href="/assets/js/192.3e160249.js"><link rel="prefetch" href="/assets/js/193.2e244d10.js"><link rel="prefetch" href="/assets/js/194.0cca6a12.js"><link rel="prefetch" href="/assets/js/195.8739fd87.js"><link rel="prefetch" href="/assets/js/196.a2bb2397.js"><link rel="prefetch" href="/assets/js/197.956fc688.js"><link rel="prefetch" href="/assets/js/198.66f69c0f.js"><link rel="prefetch" href="/assets/js/199.b827fc45.js"><link rel="prefetch" href="/assets/js/2.21097652.js"><link rel="prefetch" href="/assets/js/20.6e0f26b3.js"><link rel="prefetch" href="/assets/js/200.4b00ce4c.js"><link rel="prefetch" href="/assets/js/201.9b0c1e1e.js"><link rel="prefetch" href="/assets/js/202.a9af8076.js"><link rel="prefetch" href="/assets/js/203.c0be8adc.js"><link rel="prefetch" href="/assets/js/204.8bcc79bc.js"><link rel="prefetch" href="/assets/js/205.00c3c477.js"><link rel="prefetch" href="/assets/js/206.20684736.js"><link rel="prefetch" href="/assets/js/207.c3bae5d4.js"><link rel="prefetch" href="/assets/js/208.f4893253.js"><link rel="prefetch" href="/assets/js/209.bcbcbbc0.js"><link rel="prefetch" href="/assets/js/21.b2bf15f4.js"><link rel="prefetch" href="/assets/js/210.e9e5e48d.js"><link rel="prefetch" href="/assets/js/211.a0a8a270.js"><link rel="prefetch" href="/assets/js/212.5c02eaf1.js"><link rel="prefetch" href="/assets/js/213.6294a9ff.js"><link rel="prefetch" href="/assets/js/214.3ed1eb4d.js"><link rel="prefetch" href="/assets/js/215.8f25e14f.js"><link rel="prefetch" href="/assets/js/216.a87422ef.js"><link rel="prefetch" href="/assets/js/217.04172ea8.js"><link rel="prefetch" href="/assets/js/218.cc7e2ed1.js"><link rel="prefetch" href="/assets/js/219.85486019.js"><link rel="prefetch" href="/assets/js/22.48c2b927.js"><link rel="prefetch" href="/assets/js/220.ec7c320c.js"><link rel="prefetch" href="/assets/js/221.28e9c245.js"><link rel="prefetch" href="/assets/js/222.16544296.js"><link rel="prefetch" href="/assets/js/223.c5c1ce99.js"><link rel="prefetch" href="/assets/js/224.6880421a.js"><link rel="prefetch" href="/assets/js/225.c3f92a83.js"><link rel="prefetch" href="/assets/js/226.40f270aa.js"><link rel="prefetch" href="/assets/js/227.d62c2d8a.js"><link rel="prefetch" href="/assets/js/228.aba13d31.js"><link rel="prefetch" href="/assets/js/229.44ca3451.js"><link rel="prefetch" href="/assets/js/23.f0c36b62.js"><link rel="prefetch" href="/assets/js/230.3b213ef9.js"><link rel="prefetch" href="/assets/js/231.28b50ce4.js"><link rel="prefetch" href="/assets/js/232.fa39e933.js"><link rel="prefetch" href="/assets/js/233.ac4d0586.js"><link rel="prefetch" href="/assets/js/234.071e87e4.js"><link rel="prefetch" href="/assets/js/235.868144c0.js"><link rel="prefetch" href="/assets/js/236.0296f995.js"><link rel="prefetch" href="/assets/js/237.403a3412.js"><link rel="prefetch" href="/assets/js/238.daea8867.js"><link rel="prefetch" href="/assets/js/239.eb087f06.js"><link rel="prefetch" href="/assets/js/24.e8f8e362.js"><link rel="prefetch" href="/assets/js/240.d4ab8404.js"><link rel="prefetch" href="/assets/js/241.97c9fbd3.js"><link rel="prefetch" href="/assets/js/242.6704d369.js"><link rel="prefetch" href="/assets/js/243.0e033d3e.js"><link rel="prefetch" href="/assets/js/244.044ecbf1.js"><link rel="prefetch" href="/assets/js/245.410785ce.js"><link rel="prefetch" href="/assets/js/246.14c088a3.js"><link rel="prefetch" href="/assets/js/247.9884e5e0.js"><link rel="prefetch" href="/assets/js/248.a846fce2.js"><link rel="prefetch" href="/assets/js/249.97495793.js"><link rel="prefetch" href="/assets/js/25.647a5e87.js"><link rel="prefetch" href="/assets/js/250.a4e51ca4.js"><link rel="prefetch" href="/assets/js/251.b8ca7adb.js"><link rel="prefetch" href="/assets/js/252.37cd53f8.js"><link rel="prefetch" href="/assets/js/253.9601a997.js"><link rel="prefetch" href="/assets/js/254.05042942.js"><link rel="prefetch" href="/assets/js/255.c5861c26.js"><link rel="prefetch" href="/assets/js/256.8fcbdd02.js"><link rel="prefetch" href="/assets/js/257.67510f4b.js"><link rel="prefetch" href="/assets/js/258.91805015.js"><link rel="prefetch" href="/assets/js/259.511ee284.js"><link rel="prefetch" href="/assets/js/26.c1cfda81.js"><link rel="prefetch" href="/assets/js/260.a56226e0.js"><link rel="prefetch" href="/assets/js/261.d4cf1ac5.js"><link rel="prefetch" href="/assets/js/262.d16e1f07.js"><link rel="prefetch" href="/assets/js/263.face0a4b.js"><link rel="prefetch" href="/assets/js/264.10e85017.js"><link rel="prefetch" href="/assets/js/265.bb6823f6.js"><link rel="prefetch" href="/assets/js/266.3d568f9b.js"><link rel="prefetch" href="/assets/js/267.3b7928eb.js"><link rel="prefetch" href="/assets/js/268.8cff3378.js"><link rel="prefetch" href="/assets/js/269.eae18960.js"><link rel="prefetch" href="/assets/js/27.d0336482.js"><link rel="prefetch" href="/assets/js/270.46032f02.js"><link rel="prefetch" href="/assets/js/28.d717b1f5.js"><link rel="prefetch" href="/assets/js/29.2b3ed4c1.js"><link rel="prefetch" href="/assets/js/3.8fe6c5b7.js"><link rel="prefetch" href="/assets/js/30.71461641.js"><link rel="prefetch" href="/assets/js/31.f2001d9e.js"><link rel="prefetch" href="/assets/js/32.5bdb44b7.js"><link rel="prefetch" href="/assets/js/33.d1508194.js"><link rel="prefetch" href="/assets/js/34.88fedc22.js"><link rel="prefetch" href="/assets/js/35.25f52724.js"><link rel="prefetch" href="/assets/js/36.8650cfcb.js"><link rel="prefetch" href="/assets/js/37.34d337cc.js"><link rel="prefetch" href="/assets/js/38.0b5c0c3d.js"><link rel="prefetch" href="/assets/js/39.64841af4.js"><link rel="prefetch" href="/assets/js/4.0354a99a.js"><link rel="prefetch" href="/assets/js/40.53c7bd37.js"><link rel="prefetch" href="/assets/js/41.12b90b8d.js"><link rel="prefetch" href="/assets/js/42.632cb960.js"><link rel="prefetch" href="/assets/js/43.31422ca0.js"><link rel="prefetch" href="/assets/js/44.2f1ec7a7.js"><link rel="prefetch" href="/assets/js/45.f242a906.js"><link rel="prefetch" href="/assets/js/46.67d7d1e4.js"><link rel="prefetch" href="/assets/js/47.8d28b24f.js"><link rel="prefetch" href="/assets/js/48.06caeae2.js"><link rel="prefetch" href="/assets/js/49.21eaf609.js"><link rel="prefetch" href="/assets/js/5.d2b0b862.js"><link rel="prefetch" href="/assets/js/50.97ad10e3.js"><link rel="prefetch" href="/assets/js/51.2e71e75c.js"><link rel="prefetch" href="/assets/js/52.c6d671f3.js"><link rel="prefetch" href="/assets/js/53.bc0d5dc2.js"><link rel="prefetch" href="/assets/js/54.d9f936ea.js"><link rel="prefetch" href="/assets/js/55.3002fb0a.js"><link rel="prefetch" href="/assets/js/56.8f9707bc.js"><link rel="prefetch" href="/assets/js/57.b602b7ce.js"><link rel="prefetch" href="/assets/js/58.15366835.js"><link rel="prefetch" href="/assets/js/59.c0c54498.js"><link rel="prefetch" href="/assets/js/60.b322f4c9.js"><link rel="prefetch" href="/assets/js/61.a1134c78.js"><link rel="prefetch" href="/assets/js/62.85e02486.js"><link rel="prefetch" href="/assets/js/63.d5d33b82.js"><link rel="prefetch" href="/assets/js/64.5d8d1885.js"><link rel="prefetch" href="/assets/js/65.76eb3fe3.js"><link rel="prefetch" href="/assets/js/66.f62a6671.js"><link rel="prefetch" href="/assets/js/67.dae8c600.js"><link rel="prefetch" href="/assets/js/68.deaed188.js"><link rel="prefetch" href="/assets/js/69.15d8cdee.js"><link rel="prefetch" href="/assets/js/70.d2c29e20.js"><link rel="prefetch" href="/assets/js/71.d17c01f3.js"><link rel="prefetch" href="/assets/js/72.44b6d918.js"><link rel="prefetch" href="/assets/js/73.50c13da3.js"><link rel="prefetch" href="/assets/js/74.5cb28037.js"><link rel="prefetch" href="/assets/js/75.05deb588.js"><link rel="prefetch" href="/assets/js/76.5f62dbf6.js"><link rel="prefetch" href="/assets/js/77.99601b23.js"><link rel="prefetch" href="/assets/js/78.edb6c2b5.js"><link rel="prefetch" href="/assets/js/79.f2ad254b.js"><link rel="prefetch" href="/assets/js/8.a68d98c9.js"><link rel="prefetch" href="/assets/js/80.f3e863a8.js"><link rel="prefetch" href="/assets/js/81.417d38a3.js"><link rel="prefetch" href="/assets/js/82.4a0a5c47.js"><link rel="prefetch" href="/assets/js/83.df57062c.js"><link rel="prefetch" href="/assets/js/84.ef963e13.js"><link rel="prefetch" href="/assets/js/85.e64fbc8a.js"><link rel="prefetch" href="/assets/js/86.ed6d8d4b.js"><link rel="prefetch" href="/assets/js/87.fa1ec07f.js"><link rel="prefetch" href="/assets/js/88.30a7489f.js"><link rel="prefetch" href="/assets/js/89.cf14fa85.js"><link rel="prefetch" href="/assets/js/9.6988d7b0.js"><link rel="prefetch" href="/assets/js/90.29ec7531.js"><link rel="prefetch" href="/assets/js/91.730bb06e.js"><link rel="prefetch" href="/assets/js/92.b798233d.js"><link rel="prefetch" href="/assets/js/93.7b01b894.js"><link rel="prefetch" href="/assets/js/94.43472e9c.js"><link rel="prefetch" href="/assets/js/95.7bc57d03.js"><link rel="prefetch" href="/assets/js/96.c1dc8585.js"><link rel="prefetch" href="/assets/js/97.f93c94db.js"><link rel="prefetch" href="/assets/js/98.d44e7bc5.js"><link rel="prefetch" href="/assets/js/99.d4d46160.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c7cd9109.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/newlogo.png" alt="厄索斯" class="logo"> <span class="site-name can-hide">厄索斯</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/typescript/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FrontEnd" class="dropdown-title"><span class="title">FrontEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="FrontEnd" class="mobile-dropdown-title"><span class="title">FrontEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/" class="nav-link">
+  前端乱炖
+</a></li><li class="dropdown-subitem"><a href="/ECMAScript/" class="nav-link">
+  ECMAScript ES6-ES11
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/" class="nav-link">
+  VuePress
+</a></li><li class="dropdown-subitem"><a href="/vueAnalysis/introduction/" class="nav-link">
+  Vue源码分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自动化测试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/test/vueTest.html" class="nav-link">
+  Vue应用测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/books/javascript/know-up.html" class="nav-link">
+  你不知道的JavaScript(上)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/know-down.html" class="nav-link">
+  你不知道的JavaScript(中下)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/red-book.html" class="nav-link">
+  JavaScript高级程序设计
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/algorithm.html" class="nav-link">
+  JavaScript数据结构和算法
+</a></li><li class="dropdown-subitem"><a href="/designPattern/" class="nav-link">
+  JavaScript设计模式与开发实践
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/es6.html" class="nav-link">
+  深入理解ES6
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="BackEnd" class="dropdown-title"><span class="title">BackEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="BackEnd" class="mobile-dropdown-title"><span class="title">BackEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/node/koa.html" class="nav-link">
+  📚 Koa2文档 
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  📚 Mysql文档
+</a></li><li class="dropdown-subitem"><a href="/backend/redisdocs.html" class="nav-link">
+  📚 Redis文档
+</a></li><li class="dropdown-subitem"><a href="/docker/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  📚 Docker文档
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务器环境部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/centos.html" class="nav-link">
+  阿里云部署Nginx(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/node.html" class="nav-link">
+  阿里云部署Node&amp;pm2(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  阿里云部署Mysql(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/redisinstall.html" class="nav-link">
+  阿里云部署Redis(CentOS7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/https.html" class="nav-link">
+  Lets Encrypt生成https证书
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          常用工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webpack/" class="nav-link">
+  📚 Webpack
+</a></li><li class="dropdown-subitem"><a href="/books/git/" class="nav-link">
+  📚 Git
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.linuxcool.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  📚 Linux命令大全
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <a href="https://www.xmanv.com/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    MyBlog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/typescript/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FrontEnd" class="dropdown-title"><span class="title">FrontEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="FrontEnd" class="mobile-dropdown-title"><span class="title">FrontEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/" class="nav-link">
+  前端乱炖
+</a></li><li class="dropdown-subitem"><a href="/ECMAScript/" class="nav-link">
+  ECMAScript ES6-ES11
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/" class="nav-link">
+  VuePress
+</a></li><li class="dropdown-subitem"><a href="/vueAnalysis/introduction/" class="nav-link">
+  Vue源码分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自动化测试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/test/vueTest.html" class="nav-link">
+  Vue应用测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/books/javascript/know-up.html" class="nav-link">
+  你不知道的JavaScript(上)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/know-down.html" class="nav-link">
+  你不知道的JavaScript(中下)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/red-book.html" class="nav-link">
+  JavaScript高级程序设计
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/algorithm.html" class="nav-link">
+  JavaScript数据结构和算法
+</a></li><li class="dropdown-subitem"><a href="/designPattern/" class="nav-link">
+  JavaScript设计模式与开发实践
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/es6.html" class="nav-link">
+  深入理解ES6
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="BackEnd" class="dropdown-title"><span class="title">BackEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="BackEnd" class="mobile-dropdown-title"><span class="title">BackEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/node/koa.html" class="nav-link">
+  📚 Koa2文档 
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  📚 Mysql文档
+</a></li><li class="dropdown-subitem"><a href="/backend/redisdocs.html" class="nav-link">
+  📚 Redis文档
+</a></li><li class="dropdown-subitem"><a href="/docker/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  📚 Docker文档
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务器环境部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/centos.html" class="nav-link">
+  阿里云部署Nginx(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/node.html" class="nav-link">
+  阿里云部署Node&amp;pm2(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  阿里云部署Mysql(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/redisinstall.html" class="nav-link">
+  阿里云部署Redis(CentOS7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/https.html" class="nav-link">
+  Lets Encrypt生成https证书
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          常用工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webpack/" class="nav-link">
+  📚 Webpack
+</a></li><li class="dropdown-subitem"><a href="/books/git/" class="nav-link">
+  📚 Git
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.linuxcool.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  📚 Linux命令大全
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <a href="https://www.xmanv.com/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    MyBlog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>阿里云Centos7 Docker的一些玩法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docker/#安装docker" class="sidebar-link">安装Docker</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docker/#安装docker-compose" class="sidebar-link">安装Docker Compose</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docker/#docker-常用指令" class="sidebar-link">Docker 常用指令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docker/#docker-dockerfile" class="sidebar-link">Docker Dockerfile</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docker/#docker-compose" class="sidebar-link">Docker Compose</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docker/#安装gitlab汉化版" class="sidebar-link">安装gitlab汉化版</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docker/#打包docker镜像发布流程" class="sidebar-link">打包docker镜像发布流程</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="阿里云centos7-docker的一些玩法"><a href="#阿里云centos7-docker的一些玩法" class="header-anchor">#</a> 阿里云Centos7 Docker的一些玩法</h1> <blockquote><p>Docker要求64位的系统且内核版本至少为3.10</p></blockquote> <h2 id="安装docker"><a href="#安装docker" class="header-anchor">#</a> 安装Docker</h2> <h4 id="添加yum源-如果电脑已经安装就就忽略"><a href="#添加yum源-如果电脑已经安装就就忽略" class="header-anchor">#</a> 添加yum源 如果电脑已经安装就就忽略</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>yum <span class="token function">install</span> epel-release –y
+yum clean all
+yum list 
+</code></pre></div><h4 id="安装并运行docker"><a href="#安装并运行docker" class="header-anchor">#</a> 安装并运行Docker</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>yum <span class="token function">install</span> docker-io –y
+systemctl start docker
+</code></pre></div><h4 id="检查安装结果"><a href="#检查安装结果" class="header-anchor">#</a> 检查安装结果</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>docker info
+</code></pre></div><p><img src="/assets/img/1.5487b7ef.png" alt="图片"></p> <h2 id="安装docker-compose"><a href="#安装docker-compose" class="header-anchor">#</a> 安装Docker Compose</h2> <p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">安装地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 下载安装包</span>
+<span class="token function">sudo</span> <span class="token function">curl</span> -L <span class="token string">&quot;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>&quot;</span> -o /usr/local/bin/docker-compose
+<span class="token comment"># 安装</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+<span class="token comment"># 建立软连接</span>
+<span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+<span class="token comment"># 检查是否安装成功</span>
+<span class="token function">sudo</span> docker-compose --version
+</code></pre></div><h2 id="docker-常用指令"><a href="#docker-常用指令" class="header-anchor">#</a> Docker 常用指令</h2> <blockquote><p><a href="https://www.runoob.com/docker/docker-command-manual.html" target="_blank" rel="noopener noreferrer">Docker 命令大全<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <details class="custom-block details"><summary>Docker run  运行生成容器命令</summary> <div class="language- extra-class"><pre class="language-text"><code>docker run -d -p 80:80 -v /data:/data --name mynginx  nginx:latest
+</code></pre></div><p>-d: 后台运行容器，并返回容器ID；</p> <p>-p: 指定端口映射，格式为：主机(宿主)端口:容器端口</p> <p>-v ，--volume : 绑定一个卷 (讲宿主机器的文件个容器内的文件做映射相互作用)</p> <p>--name=&quot;nginx-lb&quot;: 为容器指定一个名称； <code>结束删除或者 exec 进入容器都可以使用该名字</code></p> <p>--link=[]: 添加链接到另一个容器；</p> <p>-m :设置容器使用内存最大值；</p> <p>--env-file=[]: 从指定文件读入环境变量；</p> <p>-h &quot;mars&quot;: 指定容器的hostname；</p> <p>-a stdin: 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；</p> <p>-i: 以交互模式运行容器，通常与 -t 同时使用；</p> <p>-P: 随机端口映射，容器内部端口随机映射到主机的端口</p> <p>-t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用；</p> <p>--dns 8.8.8.8: 指定容器使用的DNS服务器，默认和宿主一致；</p> <p>--dns-search example.com: 指定容器DNS搜索域名，默认和宿主一致；</p> <p>-e username=&quot;ritchie&quot;: 设置环境变量；</p> <p>--cpuset=&quot;0-2&quot; or --cpuset=&quot;0,1,2&quot;: 绑定容器到指定CPU运行；</p> <p>--net=&quot;bridge&quot;: 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型；</p> <p>--expose=[]: 开放一个端口或一组端口；</p></details> <details class="custom-block details"><summary>Docker exec 进入容器命令</summary> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 通常只是用 -it</span>
+docker <span class="token builtin class-name">exec</span> -it  mynginx /bin/bash
+</code></pre></div><p>-d :分离模式: 在后台运行</p> <p>-i :即使没有附加也保持STDIN 打开</p> <p>-t :分配一个伪终端</p></details> <details class="custom-block details"><summary>Docker kill 命令</summary> <p>docker kill :杀掉一个运行中的容器。</p> <div class="language- extra-class"><pre class="language-text"><code>docker kill -s KILL mynginx
+</code></pre></div><p>-s :向容器发送一个信号</p></details> <details class="custom-block details"><summary>Docker start/stop/restart 命令</summary> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 启动已被停止的容器mynginx</span>
+docker start mynginx   
+
+<span class="token comment">#停止运行中的容器mynginx</span>
+docker stop mynginx
+
+<span class="token comment">#重启容器mynginx</span>
+docker restart mynginx
+</code></pre></div></details> <details class="custom-block details"><summary>Docker rm 命令</summary> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 强制删除容器 db01、db02</span>
+docker <span class="token function">rm</span> -f db01 db02
+
+<span class="token comment"># 移除容器 nginx01 对容器 db01 的连接，连接名 db：</span>
+docker <span class="token function">rm</span> -l db 
+
+<span class="token comment">#删除容器 nginx01, 并删除容器挂载的数据卷：</span>
+docker <span class="token function">rm</span> -v nginx01
+
+<span class="token comment">#删除所有已经停止的容器：</span>
+docker <span class="token function">rm</span> <span class="token variable"><span class="token variable">$(</span>docker <span class="token function">ps</span> -a -q<span class="token variable">)</span></span>
+</code></pre></div><p>-f :通过 SIGKILL 信号强制删除一个运行中的容器。</p> <p>-l :移除容器间的网络连接，而非容器本身。</p> <p>-v :删除与容器关联的卷</p></details> <details class="custom-block details"><summary>Docker ps 命令</summary> <div class="language-sh extra-class"><pre class="language-sh"><code>docker <span class="token function">ps</span> <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span>
+</code></pre></div><p>-a :显示所有的容器，包括未运行的。</p> <p>-f :根据条件过滤显示的内容。</p> <p>--format :指定返回值的模板文件。</p> <p>-l :显示最近创建的容器。</p> <p>-n :列出最近创建的n个容器。</p> <p>--no-trunc :不截断输出。</p> <p>-q :静默模式，只显示容器编号。</p> <p>-s :显示总的文件大小。</p></details> <h2 id="docker-dockerfile"><a href="#docker-dockerfile" class="header-anchor">#</a> Docker Dockerfile</h2> <blockquote><p>Dockerfile 是一个用来构建镜像的文本文件 <a href="https://www.runoob.com/docker/docker-dockerfile.html" target="_blank" rel="noopener noreferrer">参考<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <div class="language-sh extra-class"><pre class="language-sh"><code>FROM node:12-alpine     <span class="token comment"># 使用的基础镜像文件</span>
+WORKDIR /code           <span class="token comment"># 工作目录的路径</span>
+COPY ./package.json ./server.js /code/  <span class="token comment"># 拷贝文件到/code</span>
+COPY ./static /code/static              <span class="token comment"># 拷贝文件到/code/static</span>
+RUN <span class="token function">sed</span> -i <span class="token string">'s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g'</span> /etc/apk/repositories <span class="token punctuation">\</span>
+	<span class="token operator">&amp;&amp;</span> apk update <span class="token operator">&amp;&amp;</span> apk <span class="token function">add</span> <span class="token function">yarn</span> <span class="token punctuation">\</span>
+	<span class="token operator">&amp;&amp;</span> <span class="token function">yarn</span> config <span class="token builtin class-name">set</span> registry https://registry.npm.taobao.org/ <span class="token punctuation">\</span>
+	<span class="token operator">&amp;&amp;</span> <span class="token function">yarn</span>             <span class="token comment"># 这一窜命令，设置镜像源到国内（加速），更新，安装yarn，yarn设置国内镜像源，yarn安装node依赖</span>
+CMD <span class="token punctuation">[</span><span class="token string">&quot;npm&quot;</span>, <span class="token string">&quot;start&quot;</span><span class="token punctuation">]</span>    <span class="token comment"># 容器启动时运行</span>
+</code></pre></div><h4 id="开始构建镜像"><a href="#开始构建镜像" class="header-anchor">#</a> 开始构建镜像</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># nginx:v3（镜像名称:镜像标签）  . 是指  Dockerfile  所在的目录</span>
+docker build -t nginx:v3 <span class="token builtin class-name">.</span>
+</code></pre></div><h4 id="dockerfile里的一些指令参数"><a href="#dockerfile里的一些指令参数" class="header-anchor">#</a> Dockerfile里的一些指令参数</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>FROM：
+<span class="token comment"># 定制的镜像都是基于 FROM 的镜像，这里的 nginx 就是定制需要的基础镜像。后续的操作都是基于 nginx。</span>
+
+RUN：
+<span class="token comment"># 用于执行后面跟着的命令行命令。有以下俩种格式：</span>
+<span class="token comment"># shell 格式： RUN &lt;命令行命令&gt;  等同于，在终端操作的 shell 命令。</span>
+<span class="token comment"># exec 格式： RUN [&quot;可执行文件&quot;, &quot;参数1&quot;, &quot;参数2&quot;] RUN [&quot;./test.php&quot;, &quot;dev&quot;, &quot;offline&quot;] 等价于 RUN ./test.php dev offline</span>
+
+COPY：
+<span class="token comment">#复制指令，从上下文目录中复制文件或者目录到容器里指定路径。</span>
+
+ADD：
+<span class="token comment">#DD 指令和 COPY 的使用格式一致（同样需求下，官方推荐使用 COPY）。功能也类似，不同之处如下：</span>
+
+CMD：
+<span class="token comment">#类似于 RUN 指令，用于运行程序，但二者运行的时间点不同:</span>
+<span class="token comment">#CMD 在docker run 时运行。 （比如运行node项目）</span>
+<span class="token comment">#RUN 是在 docker build (比如node项目安装的依赖文件)</span>
+
+ENV:
+<span class="token comment">#设置环境变量，定义了环境变量，那么在后续的指令中，就可以使用这个环境变量。</span>
+<span class="token comment">#ENV &lt;key&gt; &lt;value&gt;</span>
+<span class="token comment">#ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;...</span>
+
+VOLUME：
+<span class="token comment">#会吧宿主机的文件夹和容器内的文件做映射保持同步，避免容器损毁数据丢失</span>
+
+EXPOSE：
+<span class="token comment">#仅仅只是声明端口。</span>
+
+WORKDIR:
+<span class="token comment">#指定工作目录。用 WORKDIR 指定的工作目录，会在构建镜像的每一层中都存在。（WORKDIR 指定的工作目录，必须是提前创建好的）。</span>
+<span class="token comment">#docker build 构建镜像过程中的，每一个 RUN 命令都是新建的一层。只有通过 WORKDIR 创建的目录才会一直存在。</span>
+<span class="token comment"># [参考]()WORKDIR &lt;工作目录路径&gt;</span>
+
+</code></pre></div><div class="custom-block danger"><p class="custom-block-title">Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大。例如：</p> <p>FROM centos <br>
+RUN yum install wget<br>
+RUN wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-5.0.3.tar.gz&quot;<br>
+RUN tar -xvf redis.tar.gz<br>
+以上执行会创建 3 层镜像。可简化为以下格式：<br>
+FROM centos<br>
+RUN yum install wget &lt;br&gt;
+&amp;&amp; wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-5.0.3.tar.gz&quot; &lt;br&gt;
+&amp;&amp; tar -xvf redis.tar.gz<br></p></div> <h2 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker Compose</h2> <blockquote><p>Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。 <a href="https://www.runoob.com/docker/docker-compose.html" target="_blank" rel="noopener noreferrer">参考<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h4 id="compose-使用的三个步骤"><a href="#compose-使用的三个步骤" class="header-anchor">#</a> Compose 使用的三个步骤：</h4> <ul><li><p>使用 Dockerfile 定义应用程序的环境。</p></li> <li><p>使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。</p></li> <li><p>最后，执行 docker-compose up 命令来启动并运行整个应用程序。</p></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>version: <span class="token string">&quot;3&quot;</span>
+
+volumes:
+        static:         <span class="token comment"># 数据卷名称</span>
+        db:             <span class="token comment"># 数据卷名称</span>
+
+services:
+        web:
+                build:                                          <span class="token comment"># 构建镜像</span>
+                        context: ./                             <span class="token comment"># 上下文环境</span>
+                        dockerfile: ./compose/node/Dockerfile   <span class="token comment"># Dockerfile路径</span>
+                ports:
+                        - <span class="token string">&quot;3000:3000&quot;</span>
+                volumes:
+                        - static:/code/static       <span class="token comment"># 使用前面声明的static挂在容器/code/static</span>
+                restart: always                     <span class="token comment"># 总是重启</span>
+        nginx:
+                build:
+                        context: ./
+                        dockerfile: ./compose/nginx/Dockerfile
+                ports:
+                        - <span class="token string">&quot;80:80&quot;</span>
+                volumes:
+                        - static:/code/static
+                restart: always
+        mysql:
+                image: mysql:5.6        <span class="token comment"># 直接使用镜像构建</span>
+                env_file: .env          <span class="token comment"># 环境变量env，我们写入到了配置文件里，避免密码泄漏</span>
+                volumes:    
+                        - db:/var/lib/mysql
+                ports:
+                        - <span class="token string">&quot;3306:3306&quot;</span>
+                restart: always
+
+</code></pre></div><h4 id="开始运行项目"><a href="#开始运行项目" class="header-anchor">#</a> 开始运行项目</h4> <blockquote><p><code>-d</code>  加最后面后台运行可退出命令行界面</p></blockquote> <div class="language-sh extra-class"><pre class="language-sh"><code>docker-compose -f docker-compose-prod.yml build
+docker-compose -f   docker-compose-prod.yml up -d
+</code></pre></div><details class="custom-block details"><summary>Docker compose常用命令</summary> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#查看帮助</span>
+docker-compose -h
+
+<span class="token comment"># -f  指定使用的 Compose 模板文件，默认为 docker-compose.yml，可以多次指定。</span>
+docker-compose -f docker-compose.yml up -d 
+
+<span class="token comment">#启动所有容器，-d 将会在后台启动并运行所有的容器</span>
+docker-compose up -d
+
+<span class="token comment">#停用移除所有容器以及网络相关</span>
+docker-compose down
+
+<span class="token comment">#查看服务容器的输出</span>
+docker-compose logs
+
+<span class="token comment">#列出项目中目前的所有容器</span>
+docker-compose <span class="token function">ps</span>
+
+<span class="token comment">#构建（重新构建）项目中的服务容器。服务容器一旦构建后，将会带上一个标记名，例如对于 web 项目中的一个 db 容器，可能是 web_db。可以随时在项目目录下运行 docker-compose build 来重新构建服务</span>
+docker-compose build
+
+<span class="token comment">#拉取服务依赖的镜像</span>
+docker-compose pull
+
+<span class="token comment">#重启项目中的服务</span>
+docker-compose restart
+
+<span class="token comment">#删除所有（停止状态的）服务容器。推荐先执行 docker-compose stop 命令来停止容器。</span>
+docker-compose <span class="token function">rm</span> 
+
+<span class="token comment">#在指定服务上执行一个命令。</span>
+docker-compose run ubuntu <span class="token function">ping</span> docker.com
+
+<span class="token comment">#设置指定服务运行的容器个数。通过 service=num 的参数来设置数量</span>
+docker-compose scale <span class="token assign-left variable">web</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">db</span><span class="token operator">=</span><span class="token number">2</span>
+
+<span class="token comment">#启动已经存在的服务容器。</span>
+docker-compose start
+
+<span class="token comment">#停止已经处于运行状态的容器，但不删除它。通过 docker-compose start 可以再次启动这些容器。</span>
+docker-compose stop
+</code></pre></div></details> <h2 id="安装gitlab汉化版"><a href="#安装gitlab汉化版" class="header-anchor">#</a> 安装gitlab汉化版</h2> <h4 id="查找镜像"><a href="#查找镜像" class="header-anchor">#</a> 查找镜像</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>docker search gitlab
+</code></pre></div><p><img src="/assets/img/2.160d32df.png" alt="图片"></p> <h4 id="安装镜像"><a href="#安装镜像" class="header-anchor">#</a> 安装镜像</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>docker pull docker.io/twang2218/gitlab-ce-zh
+</code></pre></div><p><img src="/assets/img/3.b5126d9a.png" alt="图片"></p> <h4 id="查看镜像"><a href="#查看镜像" class="header-anchor">#</a> 查看镜像</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>docker images
+</code></pre></div><p><img src="data:image/png;base64,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" alt="图片"></p> <h4 id="创建容器"><a href="#创建容器" class="header-anchor">#</a> 创建容器</h4> <p>通常会将 GitLab 的配置 (etc) 、 日志 (log) 、数据 (data) 放到容器之外， 便于日后升级， 因此请先准备这三个目录。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">mkdir</span> -p /mnt/gitlab/etc
+<span class="token function">mkdir</span> -p /mnt/gitlab/log
+<span class="token function">mkdir</span> -p /mnt/gitlab/data
+</code></pre></div><p>准备好这三个目录之后， 就可以开始运行 Docker 镜像了。 我的建议是使用 <code>unless-stopped</code> 作为重启策略，因为这样可以手工停止容器， 方便维护。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>docker run <span class="token punctuation">\</span>
+    --hostname git.xiaohuruwei.com <span class="token punctuation">\</span> <span class="token comment">#此处改为自己的域名</span>
+    --detach <span class="token punctuation">\</span>
+    --publish <span class="token number">8443</span>:443 <span class="token punctuation">\</span>
+    --publish <span class="token number">8090</span>:80 <span class="token punctuation">\</span>
+    --publish <span class="token number">2222</span>:22<span class="token punctuation">\</span>
+    --name gitlab <span class="token punctuation">\</span>
+    --restart unless-stopped <span class="token punctuation">\</span>   <span class="token comment"># 也可以设置 always </span>
+    -v /mnt/gitlab/etc:/etc/gitlab <span class="token punctuation">\</span>
+    -v /mnt/gitlab/log:/var/log/gitlab <span class="token punctuation">\</span>
+    -v /mnt/gitlab/data:/var/opt/gitlab <span class="token punctuation">\</span>
+    docker.io/twang2218/gitlab-ce-zh
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <div class="language- extra-class"><pre class="language-text"><code>-d 后台运行
+-p 端口映射 前边是外部端口后面是docker端口
+-v  文件映射  前边是宿主机内的文件地址 后边是docker 内部的地址
+</code></pre></div></div> <h4 id="或者通过docker-compose-来创建"><a href="#或者通过docker-compose-来创建" class="header-anchor">#</a> 或者通过Docker Compose 来创建</h4> <div class="language- extra-class"><pre class="language-text"><code>    version: '3'
+    services:
+        web:
+          image: 'twang2218/gitlab-ce-zh:10.5'
+          restart: always
+          hostname: 'git.xmanv.com'
+          environment:
+            TZ: 'Asia/Shanghai'
+            GITLAB_OMNIBUS_CONFIG: |
+              external_url 'http://git.xmanv.com'
+              gitlab_rails['gitlab_shell_ssh_port'] = 2222
+              unicorn['port'] = 8888
+              nginx['listen_port'] = 80
+          ports:
+            - '80:80'
+            - '8443:443'
+            - '2222:22'
+          volumes:
+            - /usr/local/docker/gitlab/config:/etc/gitlab
+            - /usr/local/docker/gitlab/data:/var/opt/gitlab
+            - /usr/local/docker/gitlab/logs:/var/log/gitlab
+</code></pre></div><h4 id="执行以下进行构建"><a href="#执行以下进行构建" class="header-anchor">#</a> 执行以下进行构建</h4> <div class="language- extra-class"><pre class="language-text"><code>docker-compose -f   docker-compose-prod.yml up -d
+</code></pre></div><h4 id="配置gitlab主机名"><a href="#配置gitlab主机名" class="header-anchor">#</a> 配置GitLab主机名</h4> <ul><li>修改/mnt/gitlab/etc/gitlab.rb 把external_url改成部署机器的域名或者IP地址</li></ul> <div class="language- extra-class"><pre class="language-text"><code>vim /mnt/gitlab/etc/gitlab.rb
+</code></pre></div><p><img src="/assets/img/5.7b99e3a7.jpg" alt="图片"></p> <ul><li>修改/mnt/gitlab/data/gitlab-rails/etc/gitlab.yml</li></ul> <div class="language- extra-class"><pre class="language-text"><code>vim /mnt/gitlab/data/gitlab-rails/etc/gitlab.yml
+</code></pre></div><ul><li>将host的值改成映射的外部主机ip地址和端口，这里会显示在gitlab克隆地址</li></ul> <blockquote><p>这一步修改的发端口号8090  会在执行 <code>gitlab-ctl reconfigure</code> 时端口号恢复成80，所以在执行 <code>gitlab-ctl reconfigure</code> 后要重新修改  然后执行重启 <code>gitlab-ctl restart</code></p></blockquote> <p><img src="/assets/img/6.6ec94836.jpg" alt="图片"></p> <div class="custom-block danger"><p class="custom-block-title">WARNING</p> <ul><li>当执行 <code>gitlab-ctl reconfigure 然后重启gitlab时 gitlab-ctl restart</code> 此段代码时会重新应用配置文件 但是会初始化 <code>vim /mnt/gitlab/data/gitlab-rails/etc/gitlab.yml</code> 修改的port端口号为80 导致下边的仓库地址是不包含端口号的</li> <li>所以应该 先执行 <code>gitlab-ctl reconfigure</code> 然后在修改此文件 <code>vim /mnt/gitlab/data/gitlab-rails/etc/gitlab.yml</code></li> <li>然后执行   <code>gitlab-ctl restart</code></li></ul> <p><img src="/assets/img/7.da3a61ea.png" alt="图片"></p></div> <h4 id="像上面步骤修改了gitlab的ip地址一样-临时修改了gitlab的配置之后-得执行如下的命令-应用重新配好的配置并重启gitlab-然后查看gitlab的状态。"><a href="#像上面步骤修改了gitlab的ip地址一样-临时修改了gitlab的配置之后-得执行如下的命令-应用重新配好的配置并重启gitlab-然后查看gitlab的状态。" class="header-anchor">#</a> 像上面步骤修改了GitLab的ip地址一样,临时修改了GitLab的配置之后，得执行如下的命令，应用重新配好的配置并重启GitLab,然后查看GitLab的状态。</h4> <ul><li>因为是容器，所以要进入到gitlab容器中执行命令</li></ul> <div class="language- extra-class"><pre class="language-text"><code>docker exec -ti gitlab /bin/bash
+</code></pre></div><ul><li>然后</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl reconfigure  #花时间比较多
+gitlab-ctl restart    #改IP重启就可以了
+gitlab-ctl status
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">常用的几个Gitlab命令</p> <ul><li>重新应用gitlab的配置</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl reconfigure
+</code></pre></div><ul><li>重启gitlab服务</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl restart
+</code></pre></div><ul><li>查看gitlab运行状态</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl status
+</code></pre></div><ul><li>停止gitlab服务</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl stop
+</code></pre></div><ul><li>查看gitlab运行日志</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl tail
+</code></pre></div><ul><li>停止相关数据连接服务</li></ul> <div class="language- extra-class"><pre class="language-text"><code>gitlab-ctl stop unicorn
+gitlab-ctl stop sideki
+</code></pre></div></div> <h2 id="打包docker镜像发布流程"><a href="#打包docker镜像发布流程" class="header-anchor">#</a> 打包docker镜像发布流程</h2> <ol><li>先登录私有账号</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>docker login --username<span class="token operator">=</span>xxx@xxx registry.cn-qingdao.aliyuncs.com <span class="token comment">#这里用的是阿里云镜像</span>
+</code></pre></div><p>然后输入密码</p> <div class="language-shell extra-class"><pre class="language-shell"><code>your password
+</code></pre></div><ol start="2"><li>进入到项目的DockerFile文件目录</li></ol> <p>比如我的本地目录这样操作</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /Users/zeal/Documents/work/code/zealsay_front
+</code></pre></div><ol start="3"><li>执行build命令打包</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>docker build -t 你的项目名:TAG <span class="token builtin class-name">.</span>
+</code></pre></div><p>注意：项目名称的命名空间为 registry.cn-qingdao.aliyuncs.com.</p> <p>比如配置服务：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>docker build -t registry.cn-qingdao.aliyuncs.com/xxx/zealsay_front:beta-1.0.0 <span class="token builtin class-name">.</span>
+</code></pre></div><ol start="4"><li>推送到阿里云docker私有镜像服务</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>docker push 你的项目名:TAG
+</code></pre></div><p>比如：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>docker push registry.cn-qingdao.aliyuncs.com/xxx/zealsay_front:beta-1.0.0
+</code></pre></div><p>相关dockerfile可以参照项目根目录的dockerfile文件，比如前端项目：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>FROM node:10-alpine
+ENV <span class="token assign-left variable">NODE_ENV</span><span class="token operator">=</span>production
+ENV HOST <span class="token number">0.0</span>.0.0
+COPY <span class="token builtin class-name">.</span> /app
+WORKDIR /app
+EXPOSE <span class="token number">4000</span>
+<span class="token comment">#此为cnpm淘宝镜像</span>
+<span class="token comment">#RUN npm config set registry https://registry.npm.taobao.org</span>
+RUN <span class="token function">npm</span> <span class="token function">install</span>
+RUN <span class="token function">npm</span> run build
+CMD <span class="token punctuation">[</span><span class="token string">&quot;npm&quot;</span>, <span class="token string">&quot;start&quot;</span><span class="token punctuation">]</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><APlayer audio="" fixed="true" autoplay="autoplay" theme="#b7daff" loop="loop" order="list" preload="auto" volume="0.7" mutex="true" lrc-type="0" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div id="goTop" class="hide-cat" data-v-bf92849a></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.d98f75d3.js" defer></script><script src="/assets/js/7.9b6d0533.js" defer></script><script src="/assets/js/14.3fc06e57.js" defer></script>
+  </body>
+</html>

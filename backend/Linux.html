@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux常用命令解析 | 厄索斯</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/icon.png">
+    <meta name="description" content="厄索斯">
+    
+    <link rel="preload" href="/assets/css/0.styles.c7cd9109.css" as="style"><link rel="preload" href="/assets/js/app.d98f75d3.js" as="script"><link rel="preload" href="/assets/js/7.9b6d0533.js" as="script"><link rel="preload" href="/assets/js/110.f5da30a6.js" as="script"><link rel="prefetch" href="/assets/js/1.2c63f614.js"><link rel="prefetch" href="/assets/js/10.cc5d14b9.js"><link rel="prefetch" href="/assets/js/100.c8f44be0.js"><link rel="prefetch" href="/assets/js/101.795b3d75.js"><link rel="prefetch" href="/assets/js/102.aaec7d00.js"><link rel="prefetch" href="/assets/js/103.2d2b0842.js"><link rel="prefetch" href="/assets/js/104.eb790654.js"><link rel="prefetch" href="/assets/js/105.a7704875.js"><link rel="prefetch" href="/assets/js/106.8ab9cd83.js"><link rel="prefetch" href="/assets/js/107.ee3ce424.js"><link rel="prefetch" href="/assets/js/108.08e2cedb.js"><link rel="prefetch" href="/assets/js/109.877c3f78.js"><link rel="prefetch" href="/assets/js/11.c24817ef.js"><link rel="prefetch" href="/assets/js/111.f2577856.js"><link rel="prefetch" href="/assets/js/112.b680de7f.js"><link rel="prefetch" href="/assets/js/113.4d4df4c4.js"><link rel="prefetch" href="/assets/js/114.30de0066.js"><link rel="prefetch" href="/assets/js/115.d5ecc68f.js"><link rel="prefetch" href="/assets/js/116.6147f600.js"><link rel="prefetch" href="/assets/js/117.3c3956df.js"><link rel="prefetch" href="/assets/js/118.daae1fb1.js"><link rel="prefetch" href="/assets/js/119.436d3d29.js"><link rel="prefetch" href="/assets/js/12.ab5f7c80.js"><link rel="prefetch" href="/assets/js/120.1095d1d6.js"><link rel="prefetch" href="/assets/js/121.9f460f74.js"><link rel="prefetch" href="/assets/js/122.6fa65276.js"><link rel="prefetch" href="/assets/js/123.21855554.js"><link rel="prefetch" href="/assets/js/124.94f826a4.js"><link rel="prefetch" href="/assets/js/125.09bdd832.js"><link rel="prefetch" href="/assets/js/126.8d53ae81.js"><link rel="prefetch" href="/assets/js/127.4cb9031f.js"><link rel="prefetch" href="/assets/js/128.2f929363.js"><link rel="prefetch" href="/assets/js/129.0164eea0.js"><link rel="prefetch" href="/assets/js/13.89dc7a50.js"><link rel="prefetch" href="/assets/js/130.f39a3d30.js"><link rel="prefetch" href="/assets/js/131.084ce4d5.js"><link rel="prefetch" href="/assets/js/132.ee4812c0.js"><link rel="prefetch" href="/assets/js/133.f1302ee1.js"><link rel="prefetch" href="/assets/js/134.11df087f.js"><link rel="prefetch" href="/assets/js/135.1a2c8799.js"><link rel="prefetch" href="/assets/js/136.ca35b1d9.js"><link rel="prefetch" href="/assets/js/137.c1c23e5a.js"><link rel="prefetch" href="/assets/js/138.df2c8355.js"><link rel="prefetch" href="/assets/js/139.6157decf.js"><link rel="prefetch" href="/assets/js/14.3fc06e57.js"><link rel="prefetch" href="/assets/js/140.4c38a48a.js"><link rel="prefetch" href="/assets/js/141.55c239b4.js"><link rel="prefetch" href="/assets/js/142.367377a7.js"><link rel="prefetch" href="/assets/js/143.8a9e6059.js"><link rel="prefetch" href="/assets/js/144.00e6656d.js"><link rel="prefetch" href="/assets/js/145.84cfacef.js"><link rel="prefetch" href="/assets/js/146.d978c83e.js"><link rel="prefetch" href="/assets/js/147.a686cf28.js"><link rel="prefetch" href="/assets/js/148.e49d61a9.js"><link rel="prefetch" href="/assets/js/149.3910416e.js"><link rel="prefetch" href="/assets/js/15.18eacd20.js"><link rel="prefetch" href="/assets/js/150.3d9b5905.js"><link rel="prefetch" href="/assets/js/151.d990fa49.js"><link rel="prefetch" href="/assets/js/152.8d8a08ae.js"><link rel="prefetch" href="/assets/js/153.d51531ce.js"><link rel="prefetch" href="/assets/js/154.d374b646.js"><link rel="prefetch" href="/assets/js/155.e9153498.js"><link rel="prefetch" href="/assets/js/156.2295824e.js"><link rel="prefetch" href="/assets/js/157.221f67d7.js"><link rel="prefetch" href="/assets/js/158.8d252154.js"><link rel="prefetch" href="/assets/js/159.bb952efd.js"><link rel="prefetch" href="/assets/js/16.003392c7.js"><link rel="prefetch" href="/assets/js/160.69b9d123.js"><link rel="prefetch" href="/assets/js/161.00964eb4.js"><link rel="prefetch" href="/assets/js/162.197ee17a.js"><link rel="prefetch" href="/assets/js/163.caf0dd1b.js"><link rel="prefetch" href="/assets/js/164.27d90c5e.js"><link rel="prefetch" href="/assets/js/165.40e17a44.js"><link rel="prefetch" href="/assets/js/166.9abc86d0.js"><link rel="prefetch" href="/assets/js/167.2de82e8a.js"><link rel="prefetch" href="/assets/js/168.ba4950d5.js"><link rel="prefetch" href="/assets/js/169.f0c8adfc.js"><link rel="prefetch" href="/assets/js/17.2edc3b56.js"><link rel="prefetch" href="/assets/js/170.a6e3bb7d.js"><link rel="prefetch" href="/assets/js/171.593e2067.js"><link rel="prefetch" href="/assets/js/172.36cd1436.js"><link rel="prefetch" href="/assets/js/173.6b57ad74.js"><link rel="prefetch" href="/assets/js/174.03337b28.js"><link rel="prefetch" href="/assets/js/175.4f6a4c1f.js"><link rel="prefetch" href="/assets/js/176.09f161df.js"><link rel="prefetch" href="/assets/js/177.2213b875.js"><link rel="prefetch" href="/assets/js/178.cafdf490.js"><link rel="prefetch" href="/assets/js/179.feacf7af.js"><link rel="prefetch" href="/assets/js/18.f505ab09.js"><link rel="prefetch" href="/assets/js/180.bf1dbeef.js"><link rel="prefetch" href="/assets/js/181.d276a202.js"><link rel="prefetch" href="/assets/js/182.03ac25a5.js"><link rel="prefetch" href="/assets/js/183.b47e8331.js"><link rel="prefetch" href="/assets/js/184.25ea842d.js"><link rel="prefetch" href="/assets/js/185.2248daa0.js"><link rel="prefetch" href="/assets/js/186.a741edc6.js"><link rel="prefetch" href="/assets/js/187.c49038cb.js"><link rel="prefetch" href="/assets/js/188.5a0b84b4.js"><link rel="prefetch" href="/assets/js/189.e57ab776.js"><link rel="prefetch" href="/assets/js/19.2c169746.js"><link rel="prefetch" href="/assets/js/190.a9a5cc1c.js"><link rel="prefetch" href="/assets/js/191.b2afd445.js"><link rel="prefetch" href="/assets/js/192.3e160249.js"><link rel="prefetch" href="/assets/js/193.2e244d10.js"><link rel="prefetch" href="/assets/js/194.0cca6a12.js"><link rel="prefetch" href="/assets/js/195.8739fd87.js"><link rel="prefetch" href="/assets/js/196.a2bb2397.js"><link rel="prefetch" href="/assets/js/197.956fc688.js"><link rel="prefetch" href="/assets/js/198.66f69c0f.js"><link rel="prefetch" href="/assets/js/199.b827fc45.js"><link rel="prefetch" href="/assets/js/2.21097652.js"><link rel="prefetch" href="/assets/js/20.6e0f26b3.js"><link rel="prefetch" href="/assets/js/200.4b00ce4c.js"><link rel="prefetch" href="/assets/js/201.9b0c1e1e.js"><link rel="prefetch" href="/assets/js/202.a9af8076.js"><link rel="prefetch" href="/assets/js/203.c0be8adc.js"><link rel="prefetch" href="/assets/js/204.8bcc79bc.js"><link rel="prefetch" href="/assets/js/205.00c3c477.js"><link rel="prefetch" href="/assets/js/206.20684736.js"><link rel="prefetch" href="/assets/js/207.c3bae5d4.js"><link rel="prefetch" href="/assets/js/208.f4893253.js"><link rel="prefetch" href="/assets/js/209.bcbcbbc0.js"><link rel="prefetch" href="/assets/js/21.b2bf15f4.js"><link rel="prefetch" href="/assets/js/210.e9e5e48d.js"><link rel="prefetch" href="/assets/js/211.a0a8a270.js"><link rel="prefetch" href="/assets/js/212.5c02eaf1.js"><link rel="prefetch" href="/assets/js/213.6294a9ff.js"><link rel="prefetch" href="/assets/js/214.3ed1eb4d.js"><link rel="prefetch" href="/assets/js/215.8f25e14f.js"><link rel="prefetch" href="/assets/js/216.a87422ef.js"><link rel="prefetch" href="/assets/js/217.04172ea8.js"><link rel="prefetch" href="/assets/js/218.cc7e2ed1.js"><link rel="prefetch" href="/assets/js/219.85486019.js"><link rel="prefetch" href="/assets/js/22.48c2b927.js"><link rel="prefetch" href="/assets/js/220.ec7c320c.js"><link rel="prefetch" href="/assets/js/221.28e9c245.js"><link rel="prefetch" href="/assets/js/222.16544296.js"><link rel="prefetch" href="/assets/js/223.c5c1ce99.js"><link rel="prefetch" href="/assets/js/224.6880421a.js"><link rel="prefetch" href="/assets/js/225.c3f92a83.js"><link rel="prefetch" href="/assets/js/226.40f270aa.js"><link rel="prefetch" href="/assets/js/227.d62c2d8a.js"><link rel="prefetch" href="/assets/js/228.aba13d31.js"><link rel="prefetch" href="/assets/js/229.44ca3451.js"><link rel="prefetch" href="/assets/js/23.f0c36b62.js"><link rel="prefetch" href="/assets/js/230.3b213ef9.js"><link rel="prefetch" href="/assets/js/231.28b50ce4.js"><link rel="prefetch" href="/assets/js/232.fa39e933.js"><link rel="prefetch" href="/assets/js/233.ac4d0586.js"><link rel="prefetch" href="/assets/js/234.071e87e4.js"><link rel="prefetch" href="/assets/js/235.868144c0.js"><link rel="prefetch" href="/assets/js/236.0296f995.js"><link rel="prefetch" href="/assets/js/237.403a3412.js"><link rel="prefetch" href="/assets/js/238.daea8867.js"><link rel="prefetch" href="/assets/js/239.eb087f06.js"><link rel="prefetch" href="/assets/js/24.e8f8e362.js"><link rel="prefetch" href="/assets/js/240.d4ab8404.js"><link rel="prefetch" href="/assets/js/241.97c9fbd3.js"><link rel="prefetch" href="/assets/js/242.6704d369.js"><link rel="prefetch" href="/assets/js/243.0e033d3e.js"><link rel="prefetch" href="/assets/js/244.044ecbf1.js"><link rel="prefetch" href="/assets/js/245.410785ce.js"><link rel="prefetch" href="/assets/js/246.14c088a3.js"><link rel="prefetch" href="/assets/js/247.9884e5e0.js"><link rel="prefetch" href="/assets/js/248.a846fce2.js"><link rel="prefetch" href="/assets/js/249.97495793.js"><link rel="prefetch" href="/assets/js/25.647a5e87.js"><link rel="prefetch" href="/assets/js/250.a4e51ca4.js"><link rel="prefetch" href="/assets/js/251.b8ca7adb.js"><link rel="prefetch" href="/assets/js/252.37cd53f8.js"><link rel="prefetch" href="/assets/js/253.9601a997.js"><link rel="prefetch" href="/assets/js/254.05042942.js"><link rel="prefetch" href="/assets/js/255.c5861c26.js"><link rel="prefetch" href="/assets/js/256.8fcbdd02.js"><link rel="prefetch" href="/assets/js/257.67510f4b.js"><link rel="prefetch" href="/assets/js/258.91805015.js"><link rel="prefetch" href="/assets/js/259.511ee284.js"><link rel="prefetch" href="/assets/js/26.c1cfda81.js"><link rel="prefetch" href="/assets/js/260.a56226e0.js"><link rel="prefetch" href="/assets/js/261.d4cf1ac5.js"><link rel="prefetch" href="/assets/js/262.d16e1f07.js"><link rel="prefetch" href="/assets/js/263.face0a4b.js"><link rel="prefetch" href="/assets/js/264.10e85017.js"><link rel="prefetch" href="/assets/js/265.bb6823f6.js"><link rel="prefetch" href="/assets/js/266.3d568f9b.js"><link rel="prefetch" href="/assets/js/267.3b7928eb.js"><link rel="prefetch" href="/assets/js/268.8cff3378.js"><link rel="prefetch" href="/assets/js/269.eae18960.js"><link rel="prefetch" href="/assets/js/27.d0336482.js"><link rel="prefetch" href="/assets/js/270.46032f02.js"><link rel="prefetch" href="/assets/js/28.d717b1f5.js"><link rel="prefetch" href="/assets/js/29.2b3ed4c1.js"><link rel="prefetch" href="/assets/js/3.8fe6c5b7.js"><link rel="prefetch" href="/assets/js/30.71461641.js"><link rel="prefetch" href="/assets/js/31.f2001d9e.js"><link rel="prefetch" href="/assets/js/32.5bdb44b7.js"><link rel="prefetch" href="/assets/js/33.d1508194.js"><link rel="prefetch" href="/assets/js/34.88fedc22.js"><link rel="prefetch" href="/assets/js/35.25f52724.js"><link rel="prefetch" href="/assets/js/36.8650cfcb.js"><link rel="prefetch" href="/assets/js/37.34d337cc.js"><link rel="prefetch" href="/assets/js/38.0b5c0c3d.js"><link rel="prefetch" href="/assets/js/39.64841af4.js"><link rel="prefetch" href="/assets/js/4.0354a99a.js"><link rel="prefetch" href="/assets/js/40.53c7bd37.js"><link rel="prefetch" href="/assets/js/41.12b90b8d.js"><link rel="prefetch" href="/assets/js/42.632cb960.js"><link rel="prefetch" href="/assets/js/43.31422ca0.js"><link rel="prefetch" href="/assets/js/44.2f1ec7a7.js"><link rel="prefetch" href="/assets/js/45.f242a906.js"><link rel="prefetch" href="/assets/js/46.67d7d1e4.js"><link rel="prefetch" href="/assets/js/47.8d28b24f.js"><link rel="prefetch" href="/assets/js/48.06caeae2.js"><link rel="prefetch" href="/assets/js/49.21eaf609.js"><link rel="prefetch" href="/assets/js/5.d2b0b862.js"><link rel="prefetch" href="/assets/js/50.97ad10e3.js"><link rel="prefetch" href="/assets/js/51.2e71e75c.js"><link rel="prefetch" href="/assets/js/52.c6d671f3.js"><link rel="prefetch" href="/assets/js/53.bc0d5dc2.js"><link rel="prefetch" href="/assets/js/54.d9f936ea.js"><link rel="prefetch" href="/assets/js/55.3002fb0a.js"><link rel="prefetch" href="/assets/js/56.8f9707bc.js"><link rel="prefetch" href="/assets/js/57.b602b7ce.js"><link rel="prefetch" href="/assets/js/58.15366835.js"><link rel="prefetch" href="/assets/js/59.c0c54498.js"><link rel="prefetch" href="/assets/js/60.b322f4c9.js"><link rel="prefetch" href="/assets/js/61.a1134c78.js"><link rel="prefetch" href="/assets/js/62.85e02486.js"><link rel="prefetch" href="/assets/js/63.d5d33b82.js"><link rel="prefetch" href="/assets/js/64.5d8d1885.js"><link rel="prefetch" href="/assets/js/65.76eb3fe3.js"><link rel="prefetch" href="/assets/js/66.f62a6671.js"><link rel="prefetch" href="/assets/js/67.dae8c600.js"><link rel="prefetch" href="/assets/js/68.deaed188.js"><link rel="prefetch" href="/assets/js/69.15d8cdee.js"><link rel="prefetch" href="/assets/js/70.d2c29e20.js"><link rel="prefetch" href="/assets/js/71.d17c01f3.js"><link rel="prefetch" href="/assets/js/72.44b6d918.js"><link rel="prefetch" href="/assets/js/73.50c13da3.js"><link rel="prefetch" href="/assets/js/74.5cb28037.js"><link rel="prefetch" href="/assets/js/75.05deb588.js"><link rel="prefetch" href="/assets/js/76.5f62dbf6.js"><link rel="prefetch" href="/assets/js/77.99601b23.js"><link rel="prefetch" href="/assets/js/78.edb6c2b5.js"><link rel="prefetch" href="/assets/js/79.f2ad254b.js"><link rel="prefetch" href="/assets/js/8.a68d98c9.js"><link rel="prefetch" href="/assets/js/80.f3e863a8.js"><link rel="prefetch" href="/assets/js/81.417d38a3.js"><link rel="prefetch" href="/assets/js/82.4a0a5c47.js"><link rel="prefetch" href="/assets/js/83.df57062c.js"><link rel="prefetch" href="/assets/js/84.ef963e13.js"><link rel="prefetch" href="/assets/js/85.e64fbc8a.js"><link rel="prefetch" href="/assets/js/86.ed6d8d4b.js"><link rel="prefetch" href="/assets/js/87.fa1ec07f.js"><link rel="prefetch" href="/assets/js/88.30a7489f.js"><link rel="prefetch" href="/assets/js/89.cf14fa85.js"><link rel="prefetch" href="/assets/js/9.6988d7b0.js"><link rel="prefetch" href="/assets/js/90.29ec7531.js"><link rel="prefetch" href="/assets/js/91.730bb06e.js"><link rel="prefetch" href="/assets/js/92.b798233d.js"><link rel="prefetch" href="/assets/js/93.7b01b894.js"><link rel="prefetch" href="/assets/js/94.43472e9c.js"><link rel="prefetch" href="/assets/js/95.7bc57d03.js"><link rel="prefetch" href="/assets/js/96.c1dc8585.js"><link rel="prefetch" href="/assets/js/97.f93c94db.js"><link rel="prefetch" href="/assets/js/98.d44e7bc5.js"><link rel="prefetch" href="/assets/js/99.d4d46160.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c7cd9109.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/newlogo.png" alt="厄索斯" class="logo"> <span class="site-name can-hide">厄索斯</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/typescript/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FrontEnd" class="dropdown-title"><span class="title">FrontEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="FrontEnd" class="mobile-dropdown-title"><span class="title">FrontEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/" class="nav-link">
+  前端乱炖
+</a></li><li class="dropdown-subitem"><a href="/ECMAScript/" class="nav-link">
+  ECMAScript ES6-ES11
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/" class="nav-link">
+  VuePress
+</a></li><li class="dropdown-subitem"><a href="/vueAnalysis/introduction/" class="nav-link">
+  Vue源码分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自动化测试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/test/vueTest.html" class="nav-link">
+  Vue应用测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/books/javascript/know-up.html" class="nav-link">
+  你不知道的JavaScript(上)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/know-down.html" class="nav-link">
+  你不知道的JavaScript(中下)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/red-book.html" class="nav-link">
+  JavaScript高级程序设计
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/algorithm.html" class="nav-link">
+  JavaScript数据结构和算法
+</a></li><li class="dropdown-subitem"><a href="/designPattern/" class="nav-link">
+  JavaScript设计模式与开发实践
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/es6.html" class="nav-link">
+  深入理解ES6
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="BackEnd" class="dropdown-title"><span class="title">BackEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="BackEnd" class="mobile-dropdown-title"><span class="title">BackEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/node/koa.html" class="nav-link">
+  📚 Koa2文档 
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  📚 Mysql文档
+</a></li><li class="dropdown-subitem"><a href="/backend/redisdocs.html" class="nav-link">
+  📚 Redis文档
+</a></li><li class="dropdown-subitem"><a href="/docker/" class="nav-link">
+  📚 Docker文档
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务器环境部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/centos.html" class="nav-link">
+  阿里云部署Nginx(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/node.html" class="nav-link">
+  阿里云部署Node&amp;pm2(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  阿里云部署Mysql(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/redisinstall.html" class="nav-link">
+  阿里云部署Redis(CentOS7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/https.html" class="nav-link">
+  Lets Encrypt生成https证书
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          常用工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webpack/" class="nav-link">
+  📚 Webpack
+</a></li><li class="dropdown-subitem"><a href="/books/git/" class="nav-link">
+  📚 Git
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.linuxcool.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  📚 Linux命令大全
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <a href="https://www.xmanv.com/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    MyBlog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/typescript/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FrontEnd" class="dropdown-title"><span class="title">FrontEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="FrontEnd" class="mobile-dropdown-title"><span class="title">FrontEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/" class="nav-link">
+  前端乱炖
+</a></li><li class="dropdown-subitem"><a href="/ECMAScript/" class="nav-link">
+  ECMAScript ES6-ES11
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress/" class="nav-link">
+  VuePress
+</a></li><li class="dropdown-subitem"><a href="/vueAnalysis/introduction/" class="nav-link">
+  Vue源码分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自动化测试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/test/vueTest.html" class="nav-link">
+  Vue应用测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/books/javascript/know-up.html" class="nav-link">
+  你不知道的JavaScript(上)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/know-down.html" class="nav-link">
+  你不知道的JavaScript(中下)
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/red-book.html" class="nav-link">
+  JavaScript高级程序设计
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/algorithm.html" class="nav-link">
+  JavaScript数据结构和算法
+</a></li><li class="dropdown-subitem"><a href="/designPattern/" class="nav-link">
+  JavaScript设计模式与开发实践
+</a></li><li class="dropdown-subitem"><a href="/books/javascript/es6.html" class="nav-link">
+  深入理解ES6
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="BackEnd" class="dropdown-title"><span class="title">BackEnd</span> <span class="arrow down"></span></button> <button type="button" aria-label="BackEnd" class="mobile-dropdown-title"><span class="title">BackEnd</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/node/koa.html" class="nav-link">
+  📚 Koa2文档 
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  📚 Mysql文档
+</a></li><li class="dropdown-subitem"><a href="/backend/redisdocs.html" class="nav-link">
+  📚 Redis文档
+</a></li><li class="dropdown-subitem"><a href="/docker/" class="nav-link">
+  📚 Docker文档
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务器环境部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/centos.html" class="nav-link">
+  阿里云部署Nginx(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/node.html" class="nav-link">
+  阿里云部署Node&amp;pm2(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/mysql.html" class="nav-link">
+  阿里云部署Mysql(CentOs7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/redisinstall.html" class="nav-link">
+  阿里云部署Redis(CentOS7.5)
+</a></li><li class="dropdown-subitem"><a href="/backend/https.html" class="nav-link">
+  Lets Encrypt生成https证书
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevTools" class="dropdown-title"><span class="title">DevTools</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevTools" class="mobile-dropdown-title"><span class="title">DevTools</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          常用工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webpack/" class="nav-link">
+  📚 Webpack
+</a></li><li class="dropdown-subitem"><a href="/books/git/" class="nav-link">
+  📚 Git
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others" class="dropdown-title"><span class="title">Others</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others" class="mobile-dropdown-title"><span class="title">Others</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.linuxcool.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  📚 Linux命令大全
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <a href="https://www.xmanv.com/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    MyBlog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Linux常用命令解析</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/Linux.html#_1-目录操作" class="sidebar-link">1. 目录操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/Linux.html#基本操作" class="sidebar-link">基本操作</a></li><li class="sidebar-sub-header"><a href="/backend/Linux.html#漫游" class="sidebar-link">漫游</a></li></ul></li><li><a href="/backend/Linux.html#_2-文本处理" class="sidebar-link">2. 文本处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/Linux.html#查看文件" class="sidebar-link">查看文件</a></li><li class="sidebar-sub-header"><a href="/backend/Linux.html#统计" class="sidebar-link">统计</a></li><li class="sidebar-sub-header"><a href="/backend/Linux.html#其他" class="sidebar-link">其他</a></li></ul></li><li><a href="/backend/Linux.html#_3-压缩" class="sidebar-link">3. 压缩</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/backend/Linux.html#_4-日常运维" class="sidebar-link">4. 日常运维</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/backend/Linux.html#_5-系统状态概览" class="sidebar-link">5. 系统状态概览</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/backend/Linux.html#_6-工作常用" class="sidebar-link">6. 工作常用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/backend/Linux.html#_7-网络" class="sidebar-link">7. 网络</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux常用命令解析"><a href="#linux常用命令解析" class="header-anchor">#</a> Linux常用命令解析</h1> <h2 id="_1-目录操作"><a href="#_1-目录操作" class="header-anchor">#</a> 1. 目录操作</h2> <p>工作中，最常打交道的就是对目录和文件的操作。Linux 提供了相应的命令去操作他，并将这些命令抽象、缩写。</p> <h3 id="基本操作"><a href="#基本操作" class="header-anchor">#</a> 基本操作</h3> <p>可能是这些命令太常用了，多打一个字符都是罪过。所以它们都很短，不用阿拉伯数字，一个剪刀手就能数过来。</p> <p><img src="https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLr3k8Qpia2ow7c7oRIfBRP44LCiccgPTIeSKz89k0PedLYib9Bur8yFSic7ELuND9qoaTDuCnywVqyibhg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p> <p><strong>命令:</strong> <strong><code>mkdir:</code></strong> 创建目录  make dir
+<strong><code>cp:</code></strong> 拷贝文件  copy
+<strong><code>mv:</code></strong> 移动文件   move
+<strong><code>rm:</code></strong>  删除文件 remove</p> <p><strong>例子：</strong></p> <div class="language- extra-class"><pre class="language-text"><code> # 创建目录和父目录a,b,c,d
+ mkdir -p a/b/c/d
+
+ # 拷贝文件夹a到/tmp目录
+ cp -rvf a/ /tmp/
+
+ # 移动文件a到/tmp目录，并重命名为b
+ mv -vf a /tmp/b
+
+ # 删除机器上的所有文件
+ rm -rvf /
+</code></pre></div><h3 id="漫游"><a href="#漫游" class="header-anchor">#</a> 漫游</h3> <p>Linux 上是黑漆漆的命令行，依然要面临人生三问：我是谁？我在哪？我要去何方？</p> <p><strong><code>ls</code></strong>  命令能够看到当前目录的所有内容。 <strong><code>ls -l</code></strong> 能够看到更多信息，判断你是谁。</p> <p><strong><code>pwd</code></strong> 命令能够看到当前终端所在的目录。告诉你你在哪。</p> <p><strong><code>cd</code></strong> 假如你去错了地方，<strong><code>cd</code></strong> 命令能够切换到对的目录。</p> <p><strong><code>find</code></strong>  find 命令通过筛选一些条件，能够找到已经被遗忘的文件。</p> <h2 id="_2-文本处理"><a href="#_2-文本处理" class="header-anchor">#</a> 2. 文本处理</h2> <p>这是是非常非常加分的技能。get 到之后，也能节省更多时间来研究面向对象。</p> <p><img src="https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLr3k8Qpia2ow7c7oRIfBRP44s34SBJXSpEI8KGaGXdfUiaXlJQmcXMOdibsTHEEuk9ibkazattz6qLYbA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p> <h3 id="查看文件"><a href="#查看文件" class="header-anchor">#</a> 查看文件</h3> <h4 id="cat"><a href="#cat" class="header-anchor">#</a> cat</h4> <p>最常用的就是 <code>cat</code> 命令了，注意，如果文件很大的话，<code>cat</code> 命令的输出结果会疯狂在终端上输出，可以多次按 <code>ctrl+c</code> 终止。</p> <div class="language- extra-class"><pre class="language-text"><code># 查看文件大小
+du -h file
+
+# 查看文件内容
+cat file
+</code></pre></div><h4 id="less"><a href="#less" class="header-anchor">#</a> less</h4> <p>既然 <code>cat</code> 有这个问题，针对比较大的文件，我们就可以使用 <code>less</code> 命令打开某个文件。
+类似 vim，less 可以在输入 <code>/</code> 后进入查找模式，然后按 <code>n</code>(N) 向下 (上) 查找。
+有许多操作，都和 vim 类似，你可以类比看下。</p> <h4 id="tail"><a href="#tail" class="header-anchor">#</a> tail</h4> <p>大多数做服务端开发的同学，都了解这么命令。比如，查看 nginx 的滚动日志。</p> <div class="language- extra-class"><pre class="language-text"><code>tail -f access.log
+</code></pre></div><p><code>tail</code>命令可以静态的查看某个文件的最后 n 行，与之对应的，head 命令查看文件头 n 行。但 head 没有滚动功能，就像尾巴是往外长的，不会反着往里长。</p> <div class="language- extra-class"><pre class="language-text"><code>tail -n100 access.log
+head -n100 access.log
+</code></pre></div><h3 id="统计"><a href="#统计" class="header-anchor">#</a> 统计</h3> <p><code>sort</code> 和 <code>uniq</code> 经常配对使用。
+<code>sort</code> 可以使用 <code>-t</code> 指定分隔符，使用 <code>-k</code> 指定要排序的列。</p> <p>下面这个命令输出 nginx 日志的 ip 和每个 ip 的 pv，pv 最高的前 10</p> <div class="language- extra-class"><pre class="language-text"><code>#2019-06-26T10:01:57+08:00|nginx001.server.ops.pro.dc|100.116.222.80|10.31.150.232:41021|0.014|0.011|0.000|200|200|273|-|/visit|sign=91CD1988CE8B313B8A0454A4BBE930DF|-|-|http|POST|112.4.238.213
+
+awk -F&quot;|&quot; '{print $3}' access.log | sort | uniq -c | sort -nk1 -r | head -n10
+</code></pre></div><h3 id="其他"><a href="#其他" class="header-anchor">#</a> 其他</h3> <h4 id="grep"><a href="#grep" class="header-anchor">#</a> grep</h4> <p><code>grep</code> 用来对内容进行过滤，带上 <code>--color</code> 参数，可以在支持的终端可以打印彩色，参数 <code>n</code> 则输出具体的行数，用来快速定位。
+比如：查看 nginx 日志中的 POST 请求。</p> <div class="language- extra-class"><pre class="language-text"><code>grep -rn --color POST access.log
+</code></pre></div><p>推荐每次都使用这样的参数。</p> <p>如果我想要看某个异常前后相关的内容，就可以使用 ABC 参数。它们是几个单词的缩写，经常被使用。
+<strong><code>A</code></strong>  after  内容后 n 行
+<strong><code>B</code></strong>  before  内容前 n 行
+<strong><code>C</code></strong>  count?  内容前后 n 行
+就像是这样：</p> <div class="language- extra-class"><pre class="language-text"><code>grep -rn --color Exception -A10 -B2   error.log
+</code></pre></div><h4 id="diff"><a href="#diff" class="header-anchor">#</a> diff</h4> <p><code>diff</code> 命令用来比较两个文件是否的差异。当然，在 ide 中都提供了这个功能，<code>diff</code> 只是命令行下的原始折衷。对了，<code>diff</code>和 <code>patch</code> 还是一些平台源码的打补丁方式，你要是不用，就 pass 吧。</p> <h2 id="_3-压缩"><a href="#_3-压缩" class="header-anchor">#</a> 3. 压缩</h2> <p>为了减小传输文件的大小，一般都开启压缩。linux 下常见的压缩文件有 tar、bzip2、zip、rar 等，7z 这种用的相对较少。</p> <p><img src="https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLr3k8Qpia2ow7c7oRIfBRP446K6NK31ZvLGibegLLn2lkgcvdMJHSlicvTibIZoNiaLsiaP23Stclw25CpQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p> <p><strong><code>.tar</code></strong>  使用 tar 命令压缩或解压
+<strong><code>.bz2</code></strong> 使用 bzip2 命令操作
+<strong><code>.gz</code></strong> 使用 gzip 命令操作
+<strong><code>.zip</code></strong> 使用 unzip 命令解压
+<strong><code>.rar</code></strong> 使用 unrar 命令解压</p> <p>最常用的就是<code>.tar</code> ,<code>.gz</code> 文件格式了。其实是经过了 tar 打包后，再使用 gzip 压缩。</p> <p>创建压缩文件</p> <div class="language- extra-class"><pre class="language-text"><code>tar cvfz  archive.tar.gz dir/
+</code></pre></div><p>解压</p> <div class="language- extra-class"><pre class="language-text"><code>tar xvfz. archive.tar.gz
+</code></pre></div><p>快去弄清楚它们的关系吧。</p> <h2 id="_4-日常运维"><a href="#_4-日常运维" class="header-anchor">#</a> 4. 日常运维</h2> <p>开机是按一下启动按钮，关机总不至于是长按启动按钮吧。对了，是 shutdown 命令，不过一般也没权限。passwd 命令可以用来修改密码，这个权限还是可以有的。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLr3k8Qpia2ow7c7oRIfBRP44fIawp4wjIpiaib4K2GponbwdqGUu7HibzHKDUMqa05c7ZNG7jsJ8NhCWQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p> <h4 id="mount"><a href="#mount" class="header-anchor">#</a> mount</h4> <p><code>mount</code> 命令可以挂在一些外接设备，比如 u 盘，比如 iso，比如刚申请的 ssd。可以放心的看小电影了。</p> <div class="language- extra-class"><pre class="language-text"><code>mount /dev/sdb1 /xiaodianying
+</code></pre></div><h4 id="chown"><a href="#chown" class="header-anchor">#</a> chown</h4> <p><code>chown</code> 用来改变文件的所属用户和所属组。
+<code>chmod</code> 用来改变文件的访问权限。</p> <p>这两个命令，都和 linux 的文件权限 777 有关。
+示例：</p> <div class="language- extra-class"><pre class="language-text"><code># 毁灭性的命令
+chmod 000 -R /
+
+# 修改a目录的用户和组为 xjj
+chown -R xjj:xjj a
+
+# 给a.sh文件增加执行权限（这个太常用了)
+chmod a+x a.sh
+</code></pre></div><h4 id="yum"><a href="#yum" class="header-anchor">#</a> yum</h4> <p>假定你用的是 centos，则包管理工具就是 yum。如果你的系统没有 wget 命令，就可以使用如下命令进行安装。</p> <div class="language- extra-class"><pre class="language-text"><code>yum install wget -y
+</code></pre></div><h4 id="systemctl"><a href="#systemctl" class="header-anchor">#</a> systemctl</h4> <p>当然，centos 管理后台服务也有一些套路。<code>service</code> 命令就是。<code>systemctl</code> 兼容了 <code>service</code> 命令，我们看一下怎么重启 mysql 服务。 推荐用下面这个。</p> <div class="language- extra-class"><pre class="language-text"><code>service mysql restart
+systemctl restart  mysqld
+</code></pre></div><p>对于普通的进程，就要使用 kill 命令进行更加详细的控制了。kill 命令有很多信号，如果你在用 <code>kill -9</code>，你一定想要了解 <code>kill -15</code> 以及 <code>kill -3</code> 的区别和用途。</p> <h4 id="su"><a href="#su" class="header-anchor">#</a> su</h4> <p>su 用来切换用户。比如你现在是 root，想要用 xjj 用户做一些勾当，就可以使用 su 切换。</p> <div class="language- extra-class"><pre class="language-text"><code>su xjj
+su - xjj
+</code></pre></div><p><code>-</code> 可以让你干净纯洁的降临另一个账号，不出意外，推荐。</p> <h2 id="_5-系统状态概览"><a href="#_5-系统状态概览" class="header-anchor">#</a> 5. 系统状态概览</h2> <p>登陆一台 linux 机器，有些命令能够帮助你快速找到问题。这些命令涵盖内存、cpu、网络、io、磁盘等。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLr3k8Qpia2ow7c7oRIfBRP44VOawOa9xZXXmoPEj80SbXKE8CS1sxQYuFC4wkKQSwyHsvxnwwJWcqA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p> <h4 id="uname"><a href="#uname" class="header-anchor">#</a> uname</h4> <p><code>uname</code>命令可以输出当前的内核信息，让你了解到用的是什么机器。</p> <div class="language- extra-class"><pre class="language-text"><code>uname -a
+</code></pre></div><h4 id="ps"><a href="#ps" class="header-anchor">#</a> ps</h4> <p>ps 命令能够看到进程 / 线程状态。和 top 有些内容重叠，常用。</p> <div class="language- extra-class"><pre class="language-text"><code># 找到java进程
+ps -ef|grep java
+</code></pre></div><h4 id="top"><a href="#top" class="header-anchor">#</a> top</h4> <p>系统状态一览，主要查看。cpu load 负载、cpu 占用率。使用内存或者 cpu 最高的一些进程。下面这个命令可以查看某个进程中的线程状态。</p> <div class="language- extra-class"><pre class="language-text"><code>top -H -p pid
+</code></pre></div><h4 id="free"><a href="#free" class="header-anchor">#</a> free</h4> <p>top 也能看内存，但不友好，free 是专门用来查看内存的。包括物理内存和虚拟内存 swap。</p> <h4 id="df"><a href="#df" class="header-anchor">#</a> df</h4> <p>df 命令用来查看系统中磁盘的使用量，用来查看磁盘是否已经到达上限。参数 <code>h</code> 可以以友好的方式进行展示。</p> <div class="language- extra-class"><pre class="language-text"><code>df -h
+</code></pre></div><h4 id="ifconfig"><a href="#ifconfig" class="header-anchor">#</a> ifconfig</h4> <p>查看 ip 地址，不啰嗦，替代品是 <code>ip addr</code> 命令。</p> <h4 id="ping"><a href="#ping" class="header-anchor">#</a> ping</h4> <p>至于网络通不通，可以使用 ping 来探测。（不包括那些禁 ping 的网站）</p> <h4 id="netstat"><a href="#netstat" class="header-anchor">#</a> netstat</h4> <p>虽然 ss 命令可以替代 netstat 了，但现实中 netstat 仍然用的更广泛一些。比如，查看当前的所有 tcp 连接。</p> <div class="language- extra-class"><pre class="language-text"><code>netstat -ant
+</code></pre></div><p>此命令，在找一些<code>本地起了什么端口</code>之类的问题上，作用很大。</p> <h2 id="_6-工作常用"><a href="#_6-工作常用" class="header-anchor">#</a> 6. 工作常用</h2> <p>还有一些在工作中经常会用到的命令，它们的出现频率是非常高的 ，都是些熟面孔。</p> <p><img src="https://mmbiz.qpic.cn/mmbiz_png/cvQbJDZsKLr3k8Qpia2ow7c7oRIfBRP44sxWxa5g4PeGbx0dgKULl6jia3m6X6dG3tVr1qcGdsmSCvdaicy3icx3kg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p> <h4 id="export"><a href="#export" class="header-anchor">#</a> export</h4> <p>很多安装了 jdk 的同学找不到 java 命令，<code>export</code> 就可以帮你办到它。export 用来设定一些环境变量，env 命令能看到当前系统中所有的环境变量。比如，下面设置的就是 jdk 的。</p> <div class="language- extra-class"><pre class="language-text"><code>export PATH=$PATH:/home/xjj/jdk/bin
+</code></pre></div><p>有时候，你想要知道所执行命令的具体路径。那么就可以使用 whereis 命令，我是假定了你装了多个版本的 jdk。</p> <h4 id="crontab"><a href="#crontab" class="header-anchor">#</a> crontab</h4> <p>这就是 linux 本地的 job 工具。不是分布式的，你要不是运维，就不要用了。比如，每 10 分钟提醒喝茶上厕所。</p> <div class="language- extra-class"><pre class="language-text"><code>*/10 * * * * /home/xjj/wc10min
+</code></pre></div><h4 id="date"><a href="#date" class="header-anchor">#</a> date</h4> <p><code>date</code> 命令用来输出当前的系统时间，可以使用 - s 参数指定输出格式。但设置时间涉及到设置硬件，所以有另外一个命令叫做 <code>hwclock</code>。</p> <h4 id="xargs"><a href="#xargs" class="header-anchor">#</a> xargs</h4> <p>xargs 读取输入源，然后逐行处理。这个命令非常有用。举个栗子，删除目录中的所有 class 文件。</p> <div class="language- extra-class"><pre class="language-text"><code>find . | grep .class$ | xargs rm -rvf
+
+#把所有的rmvb文件拷贝到目录
+ls *.rmvb | xargs -n1 -i cp {} /mount/xiaodianying
+</code></pre></div><h2 id="_7-网络"><a href="#_7-网络" class="header-anchor">#</a> 7. 网络</h2> <p>linux 是一个多作业的网络操作系统，所以网络命令有很多很多。工作中，最常和这些打交道。</p> <h4 id="ssh"><a href="#ssh" class="header-anchor">#</a> ssh</h4> <p>这个，就不啰嗦了。你一定希望了解 <code>ssh隧道</code>是什么。你要是想要详细的输出过程，记得加参数 <code>-v</code>。</p> <h4 id="scp"><a href="#scp" class="header-anchor">#</a> scp</h4> <p><code>scp</code> 用来进行文件传输。也可以用来传输目录。也有更高级的 <code>sftp</code> 命令。</p> <div class="language- extra-class"><pre class="language-text"><code>scp a.txt 192.168.0.12:/tmp/a.txt
+scp -r a_dir 192.168.0.12:/tmp/
+</code></pre></div><h4 id="wget"><a href="#wget" class="header-anchor">#</a> wget</h4> <p>你想要在服务器上安装 jdk，不会先在本地下载下来，然后使用 scp 传到服务器上吧（有时候不得不这样）。wget 命令可以让你直接使用命令行下载文件，并支持断点续传。</p> <div class="language- extra-class"><pre class="language-text"><code>wget -c http://oracle.fuck/jdk2019.bin
+</code></pre></div><h4 id="mysql"><a href="#mysql" class="header-anchor">#</a> mysql</h4> <p><code>mysql</code> 应用广泛，并不是每个人都有条件用上 <code>navicat</code> 的。你需要了解 mysql 的连接方式和基本的操作，在异常情况下才能游刃有余。</p> <div class="language- extra-class"><pre class="language-text"><code>mysql -u root -p -h 192.168.1.2
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><APlayer audio="" fixed="true" autoplay="autoplay" theme="#b7daff" loop="loop" order="list" preload="auto" volume="0.7" mutex="true" lrc-type="0" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div id="goTop" class="hide-cat" data-v-bf92849a></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.d98f75d3.js" defer></script><script src="/assets/js/7.9b6d0533.js" defer></script><script src="/assets/js/110.f5da30a6.js" defer></script>
+  </body>
+</html>
